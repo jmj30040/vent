@@ -1,0 +1,414 @@
+:root {
+  color: #1f2937;
+  background: #f0f2f5;
+  font-family:
+    Inter, Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  min-height: 96px;
+  margin-bottom: 24px;
+  padding: 24px 28px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.brand-logo {
+  width: 180px;
+  max-width: 38vw;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.breadcrumb {
+  margin: 0 0 8px;
+  color: #667085;
+  font-size: 14px;
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: #111827;
+  letter-spacing: 0;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 650;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.form-panel,
+.summary-panel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 24px;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+  padding: 24px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.field span {
+  color: #344054;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  color: #111827;
+  background: #fff;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+input,
+select {
+  height: 40px;
+  padding: 8px 11px;
+}
+
+textarea {
+  min-height: 108px;
+  resize: vertical;
+  padding: 10px 11px;
+  line-height: 1.55;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1677ff;
+  box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.12);
+  outline: none;
+}
+
+input[readonly] {
+  color: #667085;
+  background: #f7f8fa;
+}
+
+.error-message {
+  margin: 0 24px 18px;
+  padding: 10px 12px;
+  color: #b42318;
+  background: #fff1f0;
+  border: 1px solid #ffccc7;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  min-width: 108px;
+  height: 40px;
+  padding: 0 18px;
+  color: #fff;
+  background: #1677ff;
+  border: 1px solid #1677ff;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+button:hover {
+  background: #4096ff;
+  border-color: #4096ff;
+}
+
+.secondary-button {
+  min-width: 92px;
+  color: #1677ff;
+  background: #fff;
+}
+
+.secondary-button:hover {
+  color: #fff;
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  color: #667085;
+  background: #fff;
+  border-color: #d9d9d9;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.icon-button:hover {
+  color: #fff;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.method-modal {
+  width: min(720px, 100%);
+  max-height: min(90vh, 720px);
+  overflow: hidden;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.24);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.modal-body {
+  overflow: auto;
+  padding: 20px;
+}
+
+.modal-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.summary-panel {
+  position: static;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 24px;
+}
+
+.result-column {
+  display: grid;
+  gap: 14px;
+}
+
+.result-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 12px;
+  min-height: 96px;
+  padding: 16px;
+  border: 1px solid #edf0f4;
+  border-radius: 6px;
+  background: #fbfcfe;
+}
+
+.result-card span {
+  grid-column: 1 / -1;
+  color: #667085;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.result-card strong {
+  align-self: end;
+  color: #101828;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.result-card small {
+  align-self: end;
+  color: #667085;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.result-card.emphasized {
+  border-color: #b7d6ff;
+  background: #f3f8ff;
+}
+
+.result-card.emphasized strong {
+  color: #0958d9;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: min(100% - 24px, 1180px);
+    padding: 12px 0;
+  }
+
+  .page-header {
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    min-height: auto;
+    margin-bottom: 12px;
+    padding: 14px 16px;
+  }
+
+  .brand-logo {
+    width: 110px;
+    max-width: 34vw;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .content-grid {
+    gap: 12px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .field {
+    gap: 6px;
+  }
+
+  .field span {
+    font-size: 13px;
+  }
+
+  input,
+  select {
+    height: 36px;
+    padding: 6px 10px;
+  }
+
+  textarea {
+    min-height: 64px;
+    padding: 8px 10px;
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .panel-header {
+    padding: 12px 16px;
+  }
+
+  .secondary-button {
+    width: auto;
+    min-width: 86px;
+    height: 34px;
+    padding: 0 12px;
+  }
+
+  .result-card {
+    min-height: 72px;
+    padding: 10px;
+    gap: 4px 8px;
+  }
+
+  .result-card span {
+    font-size: 12px;
+  }
+
+  .result-card strong {
+    font-size: 18px;
+  }
+
+  .result-card small {
+    font-size: 12px;
+  }
+
+  .icon-button {
+    width: 32px;
+  }
+}

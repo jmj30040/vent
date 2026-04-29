@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="506" height="337" viewBox="0 0 506 337" role="img" aria-labelledby="title desc">
+  <title id="title">환기량 측정방법</title>
+  <desc id="desc">축류휀, 배기용 환기휀과 입기용 환기휀, 구조상 측정이 어려운 덕트의 풍속 측정 위치를 설명하는 안내도</desc>
+  <rect width="506" height="337" fill="#fff"/>
+  <circle cx="30" cy="14" r="5" fill="#000"/>
+  <text x="45" y="18" font-family="Arial, sans-serif" font-size="14" fill="#000">환기량 측정방법</text>
+
+  <g fill="none" stroke="#8a8a8a" stroke-width="1.1">
+    <circle cx="91" cy="44" r="12"/>
+    <text x="87" y="49" font-family="Arial, sans-serif" font-size="13" fill="#444" stroke="none">1</text>
+    <circle cx="237" cy="44" r="12"/>
+    <text x="233" y="49" font-family="Arial, sans-serif" font-size="13" fill="#444" stroke="none">2</text>
+    <circle cx="378" cy="44" r="12"/>
+    <text x="374" y="49" font-family="Arial, sans-serif" font-size="13" fill="#444" stroke="none">3</text>
+  </g>
+
+  <g transform="translate(45 78)" fill="none" stroke="#969696" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="50" cy="51" r="45"/>
+    <ellipse cx="49" cy="27" rx="8" ry="18"/>
+    <ellipse cx="30" cy="62" rx="9" ry="23" transform="rotate(-58 30 62)"/>
+    <ellipse cx="66" cy="66" rx="9" ry="23" transform="rotate(50 66 66)"/>
+    <circle cx="50" cy="52" r="8"/>
+    <path d="M10 51h78"/>
+    <path d="M80 47l8 4-8 4"/>
+    <path d="M20 47l-8 4 8 4"/>
+  </g>
+
+  <g transform="translate(196 84)" fill="none" stroke="#969696" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M52 4v90"/>
+    <path d="M60 9v78"/>
+    <ellipse cx="35" cy="24" rx="8" ry="16"/>
+    <ellipse cx="35" cy="60" rx="8" ry="16"/>
+    <path d="M28 42h14"/>
+    <path d="M28 78h14"/>
+    <path d="M5 16h16M5 27h16M5 38h16"/>
+    <path d="M17 12l7 4-7 4M17 23l7 4-7 4M17 34l7 4-7 4"/>
+    <path d="M67 16h14M67 27h14M67 38h14"/>
+    <path d="M75 12l7 4-7 4M75 23l7 4-7 4M75 34l7 4-7 4"/>
+    <rect x="84" y="44" width="7" height="40" rx="3"/>
+    <path d="M87 87v20"/>
+    <path d="M80 107h15"/>
+    <path d="M93 50h10"/>
+    <path d="M103 50v28"/>
+    <path d="M99 71l4 7 4-7"/>
+  </g>
+
+  <g transform="translate(318 80)" fill="none" stroke="#969696" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 95V17c0-8 7-15 15-15h82c8 0 15 7 15 15v78"/>
+    <path d="M26 30c-8-10-8-15 0-23"/>
+    <path d="M52 30c-8-10-8-15 0-23"/>
+    <path d="M78 30c-8-10-8-15 0-23"/>
+    <path d="M104 30c-8-10-8-15 0-23"/>
+    <path d="M26 18l-6-3 6-3"/>
+    <path d="M52 18l-6-3 6-3"/>
+    <path d="M78 18l-6-3 6-3"/>
+    <path d="M104 18l-6-3 6-3"/>
+    <path d="M27 84V43"/>
+    <path d="M72 84V43"/>
+    <ellipse cx="49" cy="59" rx="21" ry="11"/>
+    <ellipse cx="92" cy="59" rx="21" ry="11"/>
+    <path d="M49 83V60"/>
+    <path d="M92 83V60"/>
+    <path d="M45 70l4-10 4 10"/>
+    <path d="M88 70l4-10 4 10"/>
+    <path d="M27 91h86"/>
+    <path d="M32 87l-7 4 7 4"/>
+    <path d="M106 87l7 4-7 4"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="14" fill="#000">
+    <text x="22" y="233" font-weight="700">① 풍속계를 회전하고 있는 직경선상에 놓고 1분간 측정한다.</text>
+    <text x="41" y="255" font-weight="700">오차 발생 여부로 인해 반복측정 후 평균치를 구한다.</text>
+    <text x="22" y="279" font-weight="700">② 배기용 환기휀의 경우 돈사 외측으로 부터 배기량을 측정한다.</text>
+    <text x="41" y="301" font-weight="700">입기용 환기휀의 경우 돈사 내측으로 부터 입기량을 측정한다.</text>
+    <text x="22" y="325" font-weight="700">③ 구조상 돈사 외측에서 측정이 어려울 경우 내측으로 부터 배기량을 측정한다.</text>
+  </g>
+</svg>
