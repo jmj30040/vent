@@ -8,50 +8,49 @@ const numberFormatter = new Intl.NumberFormat('ko-KR', {
   maximumFractionDigits: 0,
 });
 
+type ManufacturerSelection = Manufacturer | '';
+
 function App() {
-  const [manufacturer, setManufacturer] = useState<Manufacturer>(MANUFACTURERS[0]);
-  const initialProduct =
-    PRODUCTS.find((product) => product.manufacturer === MANUFACTURERS[0]) ?? PRODUCTS[0];
-  const [selectedProductId, setSelectedProductId] = useState(initialProduct.id);
-  const [velocity, setVelocity] = useState('1.5');
-  const [formula, setFormula] = useState(initialProduct.formula);
+  const [manufacturer, setManufacturer] = useState<ManufacturerSelection>('');
+  const [selectedProductId, setSelectedProductId] = useState('');
+  const [velocity, setVelocity] = useState('0');
   const [isMethodOpen, setIsMethodOpen] = useState(false);
 
   const manufacturerProducts = useMemo(
-    () => PRODUCTS.filter((product) => product.manufacturer === manufacturer),
+    () =>
+      manufacturer
+        ? PRODUCTS.filter((product) => product.manufacturer === manufacturer)
+        : [],
     [manufacturer],
   );
 
   const selectedProduct = useMemo(
     () =>
       manufacturerProducts.find((product) => product.id === selectedProductId) ??
-      manufacturerProducts[0] ??
-      PRODUCTS[0],
+      null,
     [manufacturerProducts, selectedProductId],
   );
 
-  const handleManufacturerChange = (nextManufacturer: Manufacturer) => {
-    const nextProduct =
-      PRODUCTS.find((product) => product.manufacturer === nextManufacturer) ?? PRODUCTS[0];
-
+  const handleManufacturerChange = (nextManufacturer: ManufacturerSelection) => {
     setManufacturer(nextManufacturer);
-    setSelectedProductId(nextProduct.id);
-    setFormula(nextProduct.formula);
+    setSelectedProductId('');
   };
 
   const handleProductChange = (productId: string) => {
-    const product =
-      manufacturerProducts.find((item) => item.id === productId) ??
-      manufacturerProducts[0] ??
-      PRODUCTS[0];
-    setSelectedProductId(product.id);
-    setFormula(product.formula);
+    setSelectedProductId(productId);
   };
 
   const calculation = useMemo<{
     result: CalculationResult | null;
     error: string;
   }>(() => {
+    if (!manufacturer || !selectedProduct) {
+      return {
+        result: null,
+        error: '',
+      };
+    }
+
     const numericVelocity = Number(velocity);
     if (velocity.trim() === '' || !Number.isFinite(numericVelocity) || numericVelocity < 0) {
       return {
@@ -63,7 +62,7 @@ function App() {
     try {
       return {
         result: calculateVentilation(
-          formula,
+          selectedProduct.formula,
           numericVelocity,
           selectedProduct.maxCmh,
           selectedProduct.maxCfm,
@@ -79,7 +78,7 @@ function App() {
             : '계산식을 확인해 주세요.',
       };
     }
-  }, [formula, selectedProduct.maxCfm, selectedProduct.maxCmh, velocity]);
+  }, [manufacturer, selectedProduct, velocity]);
 
   const { result, error } = calculation;
 
@@ -112,9 +111,10 @@ function App() {
               <select
                 value={manufacturer}
                 onChange={(event) =>
-                  handleManufacturerChange(event.target.value as Manufacturer)
+                  handleManufacturerChange(event.target.value as ManufacturerSelection)
                 }
               >
+                <option value="">제조사를 선택해주세요</option>
                 {MANUFACTURERS.map((item) => (
                   <option key={item} value={item}>
                     {item}
@@ -128,7 +128,9 @@ function App() {
               <select
                 value={selectedProductId}
                 onChange={(event) => handleProductChange(event.target.value)}
+                disabled={!manufacturer}
               >
+                <option value="">환기휀 종류를 선택해주세요</option>
                 {manufacturerProducts.map((product) => (
                   <option key={product.id} value={product.id}>
                     {product.name}
