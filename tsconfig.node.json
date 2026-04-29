@@ -4,6 +4,7 @@
     "lib": ["ESNext"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "noEmit": true,
     "types": ["node"],
     "allowSyntheticDefaultImports": true
   },
